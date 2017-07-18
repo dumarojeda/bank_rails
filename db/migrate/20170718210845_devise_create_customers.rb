@@ -10,7 +10,7 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.1]
       t.string :document_number
       t.integer :phone
       t.string :city
-      
+
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -40,7 +40,6 @@ class DeviseCreateCustomers < ActiveRecord::Migration[5.1]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.belongs_to :bank
 
       t.timestamps null: false
     end

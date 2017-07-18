@@ -41,14 +41,6 @@ ActiveRecord::Schema.define(version: 20170718211349) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "banks", force: :cascade do |t|
-    t.string "name"
-    t.bigint "admin_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_banks_on_admin_id"
-  end
-
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
     t.string "middle_name"
@@ -68,14 +60,11 @@ ActiveRecord::Schema.define(version: 20170718211349) do
     t.datetime "last_sign_in_at"
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
-    t.bigint "bank_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["bank_id"], name: "index_customers_on_bank_id"
     t.index ["email"], name: "index_customers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
   add_foreign_key "accounts", "customers"
-  add_foreign_key "banks", "admins"
 end
