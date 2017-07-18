@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :bank_transactions
   resources :debit_cards
   resources :accounts
   devise_for :customers

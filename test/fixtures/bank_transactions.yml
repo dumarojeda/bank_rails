@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount: 1
+  movement: MyString
+  source: MyString
+  debit_card: one
+  account: one
+
+two:
+  amount: 1
+  movement: MyString
+  source: MyString
+  debit_card: two
+  account: two
