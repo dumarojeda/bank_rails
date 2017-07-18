@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718211349) do
+ActiveRecord::Schema.define(version: 20170718214641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,5 +66,16 @@ ActiveRecord::Schema.define(version: 20170718211349) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "debit_cards", force: :cascade do |t|
+    t.bigint "account_id"
+    t.bigint "customer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_debit_cards_on_account_id"
+    t.index ["customer_id"], name: "index_debit_cards_on_customer_id"
+  end
+
   add_foreign_key "accounts", "customers"
+  add_foreign_key "debit_cards", "accounts"
+  add_foreign_key "debit_cards", "customers"
 end

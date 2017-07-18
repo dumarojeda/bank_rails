@@ -1,0 +1,2 @@
+class DebitCardsController < ApplicationController
+end
