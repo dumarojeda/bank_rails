@@ -1,3 +1,8 @@
+- if @errors
+  .alert.alert-danger{:role => "alert"}
+    %ul
+      - @errors.each do |error|
+        %li= error
 = form_for(customer) do |f|
   .form-group
     = f.label "Nombre"
@@ -18,4 +23,4 @@
     = f.label "Email"
     = f.email_field :email, class: 'form-control'
   .form-group
-    = f.submit @customer.new_record? ? 'Registrar Cliente' : 'Actualizar Cliente', class: 'btn btn-custom'
+    = f.submit customer.new_record? ? 'Registrar Cliente' : 'Actualizar Cliente', class: 'btn btn-custom'
