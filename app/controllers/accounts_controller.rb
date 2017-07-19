@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  before_action :set_account, only: [:edit, :update, :destroy]
   before_action :authenticate_admin!
 
   def index
@@ -14,17 +15,32 @@ class AccountsController < ApplicationController
     if @account.save
       redirect_to accounts_path
     else
-      redirect_to new_account_path
+      @errors = @account.errors.full_messages
+      render 'new'
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @account.update(accounts_params)
+      redirect_to accounts_path
+    else
+      @errors = @account.errors.full_messages
+      render 'edit'
     end
   end
 
   def destroy
-    @account = Account.find(params[:id])
     @account.destroy
     redirect_to accounts_path
   end
-
-  def accounts_params
-    params.require(:account).permit(:account_number, :amount).merge(customer_id: params[:account][:customer_id].to_i)
-  end
+  private
+    def set_account
+      @account = Account.find(params[:id])
+    end
+    def accounts_params
+      params.require(:account).permit(:account_number, :amount).merge(customer_id: params[:account][:customer_id].to_i)
+    end
 end

@@ -1,10 +1,15 @@
 .row
   .col-sm-6.col-sm-offset-3
     %h1 Crear cuenta de ahorros
+    - if @errors
+      .alert.alert-danger{:role => "alert"}
+        %ul
+          - @errors.each do |error|
+            %li= error
     = form_for :account, url: accounts_path do |f|
       .form-group
         = f.label "Selecciona un cliente"
-        = collection_select(:account, :customer_id, Customer.all, :id, :first_name, {prompt: 'Clientes'}, {class: 'form-control' })
+        = f.collection_select(:customer_id, Customer.all, :id, :first_name, {prompt: 'Clientes'}, {class: 'form-control' })
       .form-group
         = f.label "Saldo inicial"
         = f.text_field :amount, class: 'form-control'
