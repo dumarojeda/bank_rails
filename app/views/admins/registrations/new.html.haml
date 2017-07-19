@@ -1,0 +1,17 @@
+.row
+  .col-sm-4.col-sm-offset-4
+    %h2 Crear Administrador
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .form-group
+        = f.label "Email"
+        = f.email_field :email, class: 'form-control', autofocus: true
+      .form-group
+        = f.label "Contraseña"
+        = f.password_field :password, class: 'form-control', autocomplete: "off"
+      .form-group
+        = f.label "Confirmar contraseña"
+        = f.password_field :password_confirmation, class: 'form-control', autocomplete: "off"
+      .actions
+        = f.submit "Registrarse"
+    = render "admins/shared/links"
