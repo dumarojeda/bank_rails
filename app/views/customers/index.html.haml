@@ -1,8 +1,34 @@
 %h1 Clientes
-%ul
+
+%table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th Nombre
+      %th Nº Cedula
+      %th Celular
+      %th Ciudad
+      %th Email
+      %th Editar
+      %th Borrar
+  %tbody
   - @customers.each do |customer|
-    %li
-      = customer.first_name
-      = link_to ' Editar', edit_customer_path(customer)
+    %tr
+      %td
+        = customer.id
+      %td
+        = customer.first_name + customer.last_name
+      %td
+        = customer.document_number
+      %td
+        = customer.phone
+      %td
+        = customer.city
+      %td
+        = customer.email
+      %td
+        = link_to ' Editar', edit_customer_path(customer)
+      %td
+        = link_to ' Eliminar', customer_path(customer), method: :delete, data: { confirm: '¿Estas seguro?' }
 
 = link_to "Crear cliente", new_customer_path
