@@ -18,6 +18,12 @@ class AccountsController < ApplicationController
     end
   end
 
+  def destroy
+    @account = Account.find(params[:id])
+    @account.destroy
+    redirect_to accounts_path
+  end
+
   def accounts_params
     params.require(:account).permit(:account_number, :amount).merge(customer_id: params[:account][:customer_id].to_i)
   end
