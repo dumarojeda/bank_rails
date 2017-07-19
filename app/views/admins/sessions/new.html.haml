@@ -1,0 +1,19 @@
+.row
+  .col-sm-4.col-sm-offset-4
+    %h2 Iniciar Sesión
+    = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .form-group
+        = f.label "Email"
+        %br/
+        = f.email_field :email, class: 'form-control', autofocus: true
+      .form-group
+        = f.label "Contraseña"
+        %br/
+        = f.password_field :password, class: 'form-control', autocomplete: "off"
+      - if devise_mapping.rememberable?
+        .form-group
+          = f.check_box :remember_me
+          = f.label "Recuerdame"
+      .actions
+        = f.submit "Ingresar"
+    = render "admins/shared/links"

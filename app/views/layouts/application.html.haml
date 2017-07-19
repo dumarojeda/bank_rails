@@ -10,5 +10,11 @@
     = render 'layouts/header'
     #wrapper-content
       .container
+        - if notice
+          %p.alert.alert-success 
+            = notice
+        - if alert
+          %p.alert.alert-danger 
+            = alert
         = yield
     = render 'layouts/footer'

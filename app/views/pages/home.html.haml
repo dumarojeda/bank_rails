@@ -1,1 +1,8 @@
-%h1 Hi this is a great Bank!
+- if current_admin
+  %h1 Hola Administrador
+  %p Estas son las opciones que puedes hacer
+  %ul
+    %li 
+      = link_to "Crear cliente", new_customer_registration_path
+- else
+  %h1 Hi this is a great Bank!
