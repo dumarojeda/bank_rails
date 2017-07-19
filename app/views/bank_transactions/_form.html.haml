@@ -1,0 +1,21 @@
+- if @errors
+  .alert.alert-danger{:role => "alert"}
+    %ul
+      - @errors.each do |error|
+        %li= error
+= form_for(bank_transaction) do |f|
+  .form-group
+    = f.label "Valor"
+    = f.text_field :amount, class: 'form-control', autofocus: true
+  .form-group
+    = f.label "Movimiento"
+    = f.text_field :movement, class: 'form-control'
+  .form-group
+    = f.label "Fuente"
+    = f.text_field :source, class: 'form-control'
+  .form-group
+    = f.label "Selecciona una cuenta"
+    = f.collection_select(:account_id, Account.all, :id, :account_number, {prompt: 'Cuentas'}, {class: 'form-control' })
+  .form-group
+    = f.submit bank_transaction.new_record? ? 'Registrar Transacción' : 'Actualizar Transacción', class: 'btn btn-custom'
+

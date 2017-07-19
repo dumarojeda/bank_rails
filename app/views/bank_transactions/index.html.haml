@@ -1,0 +1,42 @@
+%h1 Transacciones
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+        Fecha
+      %th
+        Valor
+      %th
+        Movimiento
+      %th
+        Fuente
+      %th
+        Cuenta
+      %th
+        Cliente
+      %th
+        Editar
+      %th
+        Eliminar
+  %tbody
+  - @bank_transactions.each do |transaction|
+    %tr
+      %td
+        = transaction.created_at
+      %td
+        = transaction.amount
+      %td
+        = transaction.movement
+      %td
+        = transaction.source
+      %td
+        = transaction.account_id
+      %td
+        = Nombre
+      %td
+        = link_to ' Editar', edit_bank_transaction_path(transaction)
+      %td
+        = link_to ' Eliminar', bank_transaction_path(transaction), method: :delete, data: { confirm: '¿Estas seguro?' }
+        
+= link_to "Hacer una transaccion", new_bank_transaction_path
