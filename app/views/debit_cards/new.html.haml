@@ -1,6 +1,11 @@
 .row
   .col-sm-6.col-sm-offset-3
     %h1 Nueva tarjeta
+    - if @errors
+      .alert.alert-danger{:role => "alert"}
+        %ul
+          - @errors.each do |error|
+            %li= error
     = form_for :debit_card, url: debit_cards_path do |f|
       .form-group
         = f.label "Selecciona un cliente"

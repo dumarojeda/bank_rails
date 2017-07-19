@@ -14,7 +14,8 @@ class DebitCardsController < ApplicationController
     if @debit_card.save
       redirect_to debit_cards_path
     else
-      redirect_to new_debit_card_path
+      @errors = @debit_card.errors.full_messages
+      render 'new'
     end
   end
 

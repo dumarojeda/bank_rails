@@ -10,6 +10,7 @@
       %th Ciudad
       %th Email
       %th Cuentas
+      %th Tarjetas
       %th Editar
       %th Borrar
   %tbody
@@ -29,6 +30,8 @@
         = customer.email
       %td
         = customer.accounts.count
+      %td
+        = customer.debit_cards.count
       %td
         = link_to ' Editar', edit_customer_path(customer)
       %td
