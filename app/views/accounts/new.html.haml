@@ -1,0 +1,14 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    %h1 Crear cuenta de ahorros
+    = form_for :account, url: accounts_path do |f|
+      .form-group
+        = f.label "Selecciona un cliente"
+        = collection_select(:account, :customer_id, Customer.all, :id, :first_name, {prompt: 'Clientes'}, {class: 'form-control' })
+      .form-group
+        = f.label "Saldo inicial"
+        = f.text_field :amount, class: 'form-control'
+      .form-group
+        = f.hidden_field :account_number, value: rand.to_s[2..11]
+        = f.submit "Crear Cuenta", class: 'btn btn-custom'
+

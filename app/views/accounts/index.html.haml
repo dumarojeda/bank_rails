@@ -1,0 +1,28 @@
+%h1 Cuentas de Ahorros
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th ID
+      %th Numero de cuenta
+      %th Valor
+      %th Usuario
+      %th Editar
+      %th Borrar
+  %tbody
+  - @accounts.each do |account|
+    %tr
+      %td
+        = account.id
+      %td
+        = account.account_number
+      %td
+        = account.amount
+      %td
+        = account.customer_id
+      %td
+        = link_to ' Editar', edit_account_path(account)
+      %td
+        = link_to ' Eliminar', account_path(account), method: :delete, data: { confirm: '¿Estas seguro?' }
+
+= link_to "Crear cuenta", new_account_path

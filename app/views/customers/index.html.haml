@@ -1,6 +1,6 @@
 %h1 Clientes
 
-%table.table-striped
+%table.table.table-striped
   %thead
     %tr
       %th ID
@@ -9,6 +9,7 @@
       %th Celular
       %th Ciudad
       %th Email
+      %th Cuentas
       %th Editar
       %th Borrar
   %tbody
@@ -26,6 +27,8 @@
         = customer.city
       %td
         = customer.email
+      %td
+        = customer.account.count
       %td
         = link_to ' Editar', edit_customer_path(customer)
       %td
