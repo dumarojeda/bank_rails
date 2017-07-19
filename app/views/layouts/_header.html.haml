@@ -1,0 +1,27 @@
+#wrapper-header
+  %nav.navbar.navbar-custom
+    .container
+      .navbar-header
+        %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.sr-only Toggle navigation
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        .logo-header
+          Rails Bank
+      #navbar-collapse.collapse.navbar-collapse
+        %ul.nav.navbar-nav.navbar-right
+          - if current_admin
+            %li.dropdown
+              %a.dropdown-toggle.user-menu{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"}
+                    Hola señor bank
+                %li.divider{:role => "separator"}
+                %li= link_to "Edit Account", edit_admin_registration_path
+                %li= link_to "Sign out", destroy_admin_session_path, method: :delete
+          - else
+            %li= link_to "Registro", new_admin_registration_path
+            %li= link_to "Iniciar", new_admin_session_path
