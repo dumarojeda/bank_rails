@@ -1,0 +1,24 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    %h1 Nuevo Cliente
+    = form_for :customer, url: customers_path do |f|
+      .form-group
+        = f.label "Nombre"
+        = f.text_field :first_name, class: 'form-control', autofocus: true
+      .form-group
+        = f.label "Apellido"
+        = f.text_field :last_name, class: 'form-control'
+      .form-group
+        = f.label "Numero de Cedula"
+        = f.text_field :document_number, class: 'form-control'
+      .form-group
+        = f.label "Celular"
+        = f.text_field :phone, class: 'form-control'
+      .form-group
+        = f.label "Ciudad"
+        = f.text_field :city, class: 'form-control'
+      .form-group
+        = f.label "Email"
+        = f.email_field :email, class: 'form-control'
+      .form-group
+        = f.submit "Registrar Cliente", class: 'btn btn-custom'
