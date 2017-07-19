@@ -1,0 +1,13 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    %h1 Nueva tarjeta
+    = form_for :debit_card, url: debit_cards_path do |f|
+      .form-group
+        = f.label "Selecciona un cliente"
+        = f.collection_select(:customer_id, Customer.all, :id, :first_name, {prompt: 'Clientes'}, {class: 'form-control' })
+      .form-group
+        = f.label "Selecciona una cuenta"
+        = f.grouped_collection_select(:account_id, Customer.all, :accounts, :first_name, :id, :account_number, {prompt: 'Cuentas'}, {class: 'form-control' })
+      .form-group
+        = f.submit "Crear Cuenta", class: 'btn btn-custom'
+

@@ -1,2 +1,24 @@
 class DebitCardsController < ApplicationController
+  before_action :authenticate_admin!
+
+  def index
+    @debit_cards = DebitCard.all
+  end
+
+  def new
+    @debit_card = DebitCard.new
+  end
+
+  def create
+    @debit_card = DebitCard.new(debit_cards_params)
+    if @debit_card.save
+      redirect_to debit_cards_path
+    else
+      redirect_to new_debit_card_path
+    end
+  end
+
+  def debit_cards_params
+    params.require(:debit_card).permit(:account_id, :customer_id).merge(account_id: params[:debit_card][:account_id].to_i, customer_id: params[:debit_card][:customer_id].to_i)
+  end
 end
