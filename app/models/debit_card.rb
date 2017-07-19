@@ -2,5 +2,6 @@ class DebitCard < ApplicationRecord
   # Asociations
   belongs_to :account
   belongs_to :customer
-  has_many :bank_transactions
+  # Validations
+  validates_uniqueness_of :account_id
 end
