@@ -6,7 +6,6 @@
       %th ID
       %th Numero de cuenta
       %th Cliente
-      %th Editar
       %th Borrar
   %tbody
   - @debit_cards.each do |card|
@@ -18,8 +17,6 @@
       %td
         = card.customer_id
       %td
-        = #link_to ' Editar', edit_debit_card_path(account)
-      %td
-        = #link_to ' Eliminar', debit_cards_path(account), method: :delete, data: { confirm: '¿Estas seguro?' }
+        = link_to ' Eliminar', debit_card_path(card), method: :delete, data: { confirm: '¿Estas seguro?' }
 
 = link_to "Crear tarjeta", new_debit_card_path
