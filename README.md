@@ -51,7 +51,7 @@ Esta sección tiene las transacciones bancarias del banco, la aplicacion solo pe
 
 ## Diseño de base de datos
 Para desarrollar el software me base en el siguiente diseño de base de datos, para realizarlo me guie por las historias de usuario.
-[Design DB](./public/diseno_db.png?raw=true "Design BD")
+![Design DB](./public/diseno_db.png?raw=true "Design BD")
 
 
 ## Como instalar en local
@@ -66,3 +66,5 @@ Para instalar el proyecto en local es necesario seguir los siguientes pasos:
   * Correr el servidor `rails s`
   * Abrir en el navedador `http://localhost:8080` o ` http://0.0.0.0:8080`
 
+### Contributing & Credit
+  * Dumar Ojeda
