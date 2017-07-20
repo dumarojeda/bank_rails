@@ -64,7 +64,7 @@ Para instalar el proyecto en local es necesario seguir los siguientes pasos:
   * Crear la base de datos `rails db:create` Es necesario abrir Postgresql
   * Correr las migraciones `rails db:migrate`
   * Correr el servidor `rails s`
-  * Abrir en el navedador `http://localhost:8080` o ` http://0.0.0.0:8080`
+  * Abrir en el navedador `http://localhost:3000` o ` http://0.0.0.0:3000`
 
 ### Contributing & Credit
   * Dumar Ojeda
