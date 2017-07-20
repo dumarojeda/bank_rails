@@ -58,13 +58,21 @@ Para desarrollar el software me base en el siguiente diseño de base de datos, p
 Para instalar el proyecto en local es necesario seguir los siguientes pasos:
   * Instalar Ruby en caso de que no se tenga instalado.
   * Instalar Postgresql
+  * Entrar a la terminal
   * Clonar el repositorio `git clone git@github.com:dumarojeda/bank_rails.git`
   * Entrar al directorio del proyecto `cd bank_rails`
   * Instalar las gemas del proyecto `bundle install`
   * Crear la base de datos `rails db:create` Es necesario abrir Postgresql
   * Correr las migraciones `rails db:migrate`
   * Correr el servidor `rails s`
-  * Abrir en el navedador `http://localhost:3000` o ` http://0.0.0.0:3000`
+  * Abrir en el navegador `http://localhost:3000` o ` http://0.0.0.0:3000`
+
+Al abrir en el navegador aparece el formulario de inicio de sesion, es necesario crear un usuario administrador desde la consola de Rails, no deje habilitado el resgistro para que no se pueda registrar cualquier persona, para crear el usuario seguir los siguientes pasos.
+  * Volver a la terminal
+  * Entrar a la consola de Rails `rails console`
+  * Crear el usuario administrador `admin = User.new(:email => "admin@example.com", :password => '1q2w3e4r5t6y', :password_confirmation => '1q2w3e4r5t6y')`
+  * Guardar el usuario `admin.save`
+  * Salir con Ctrl+D
 
 ### Contributing & Credit
   * Dumar Ojeda
