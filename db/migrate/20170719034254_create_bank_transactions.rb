@@ -4,8 +4,6 @@ class CreateBankTransactions < ActiveRecord::Migration[5.1]
       t.integer :origin_account
       t.integer :target_account
       t.integer :amount
-      t.string :movement
-      t.string :source
 
       t.timestamps
     end

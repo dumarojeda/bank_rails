@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 20170719203520) do
     t.integer "origin_account"
     t.integer "target_account"
     t.bigint "amount"
-    t.string "movement"
-    t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
