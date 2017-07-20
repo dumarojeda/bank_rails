@@ -1,16 +1,13 @@
 .row
-  .col-sm-6.col-sm-offset-3
+  .col-sm-6.col-sm-offset-3.form-section
     %h1 Nueva transferencia
     =form_for :bank_transaction, url: bank_transactions_path do |f|
       .form-group
-        = f.label "Cuenta Origen"
-        = f.collection_select :origin_account, Account.all, :id, :account_number, {prompt: 'Cuenta origen'}, {class: 'form-control'}
+        = f.collection_select :origin_account, Account.all, :id, :account_number, {prompt: 'Cuenta Origen'}, {class: 'form-control'}
       .form-group
-        = f.label "Cuenta Destino"
         = f.collection_select :target_account, Account.all, :id, :account_number, {prompt: 'Cuenta Destino'}, {class: 'form-control'}
       .form-group
-        = f.label "Valor"
-        = f.text_field :amount, class: 'form-control'
+        = f.text_field :amount, placeholder: 'Valor', class: 'form-control'
       .form-group
       .form-group
         = f.submit 'Registrar Transferencia', class: 'btn btn-custom'

@@ -21,8 +21,8 @@
       %td
         = get_name_customer(account.customer_id)
       %td
-        = link_to ' Editar', edit_account_path(account)
-      %td
-        = link_to ' Eliminar', account_path(account), method: :delete, data: { confirm: '¿Estas seguro?' }
+        = link_to icon('pencil'), edit_account_path(account), {class: 'edit-icon'}
+      %td.close-icon
+        = link_to icon('close'), account_path(account), method: :delete, data: { confirm: '¿Estas seguro?' }
 
-= link_to "Crear cuenta", new_account_path
+= link_to "Crear cuenta", new_account_path, {class: 'btn btn-custom'}

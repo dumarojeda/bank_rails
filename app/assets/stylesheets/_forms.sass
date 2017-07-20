@@ -1,5 +1,5 @@
 .form-section
-  padding: 4em 0
+  padding: 2em 0
   .form-group
     margin-bottom: 1.5em
   .form-control
@@ -10,12 +10,19 @@
     border: 1px solid darken($gray-light, 5)
     &:focus
       border: 1px solid darken($gray-light, 10)
+  select
+    appearance: none
+    background: image-url("arrow-down.svg") $white 95% 15px no-repeat
+    background-size: 22px
   .btn
     &.btn-custom
-      background-color: $blue
-      color: $white
-      padding: 1em 2em
-      font-size: 1em
-      height: auto
       display: block
       width: 100%
+
+.btn
+  &.btn-custom
+    background-color: $blue
+    color: $white
+    padding: 1em 2em
+    font-size: 1em
+    height: auto

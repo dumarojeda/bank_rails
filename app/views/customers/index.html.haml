@@ -33,8 +33,8 @@
       %td
         = customer.debit_cards.count
       %td
-        = link_to ' Editar', edit_customer_path(customer)
-      %td
-        = link_to ' Eliminar', customer_path(customer), method: :delete, data: { confirm: '¿Estas seguro?' }
+        = link_to icon('pencil'), edit_customer_path(customer), {class: 'edit-icon'}
+      %td.close-icon
+        = link_to icon('close'), customer_path(customer), method: :delete, data: { confirm: '¿Estas seguro?'}
 
-= link_to "Crear cliente", new_customer_path
+= link_to "Crear cliente", new_customer_path, {class: 'btn btn-custom'}

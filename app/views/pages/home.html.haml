@@ -1,12 +1,25 @@
 .row
   .col-sm-12
     %h1 Hola Administrador
-    %p Estas son las opciones que puedes hacer
+    %p Bienvenido a Rails Bank, esta es tu seccion administrativa donde puedes gestinar a tus clientes.
+.row
   .col-sm-3
-    = link_to "Clientes", customers_path
+    .box
+      = link_to customers_path do
+        = image_tag("customers.svg")
+        %h3 Clientes
   .col-sm-3
-    = link_to "Cuentas", accounts_path
+    .box
+      = link_to accounts_path do
+        = image_tag("accounts.svg")
+        %h3 Cuentas
   .col-sm-3
-    = link_to "Tarjetas", debit_cards_path
+    .box
+      = link_to debit_cards_path do
+        = image_tag("cards.svg")
+        %h3 Tarjetas
   .col-sm-3
-    = link_to "Transacciones", bank_transactions_path
+    .box
+      = link_to bank_transactions_path do
+        = image_tag("bank_transacttions.svg")
+        %h3 Transacciones

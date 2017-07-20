@@ -1,15 +1,9 @@
 .row
-  .col-sm-6.col-sm-offset-3
+  .col-sm-6.col-sm-offset-3.form-section
     %h1 Actualizar cuenta de ahorros
-    - if @errors
-      .alert.alert-danger{:role => "alert"}
-        %ul
-          - @errors.each do |error|
-            %li= error
     = form_for(@account) do |f|
       .form-group
-        = f.label "Saldo inicial"
-        = f.text_field :amount, class: 'form-control'
+        = f.text_field :amount, placeholder: 'Saldo inicial', class: 'form-control'
       .form-group
         = f.hidden_field :account_number
         = f.hidden_field :customer_id

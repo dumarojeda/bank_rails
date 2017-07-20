@@ -19,7 +19,7 @@
         = get_name_customer(card.customer_id)
       %td
         = get_amount(card.account_id)
-      %td
-        = link_to ' Eliminar', debit_card_path(card), method: :delete, data: { confirm: '¿Estas seguro?' }
+      %td.close-icon
+        = link_to icon('close'), debit_card_path(card), method: :delete, data: { confirm: '¿Estas seguro?' }
 
-= link_to "Crear tarjeta", new_debit_card_path
+= link_to "Crear tarjeta", new_debit_card_path, {class: 'btn btn-custom'}
