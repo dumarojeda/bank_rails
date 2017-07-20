@@ -8,35 +8,19 @@
       %th
         Valor
       %th
-        Movimiento
+        Quien transfiere
       %th
-        Fuente
-      %th
-        Cuenta
-      %th
-        Cliente
-      %th
-        Editar
-      %th
-        Eliminar
+        Quien recibe
   %tbody
   - @bank_transactions.each do |transaction|
     %tr
       %td
-        = transaction.created_at
+        = transaction.created_at.to_formatted_s(:long)
       %td
-        = transaction.amount
+        = number_to_currency(transaction.amount)
       %td
-        = transaction.movement
+        = get_name_customer(transaction.origin_account)
       %td
-        = transaction.source
-      %td
-        = transaction.account_id
-      %td
-        = Nombre
-      %td
-        = link_to ' Editar', edit_bank_transaction_path(transaction)
-      %td
-        = link_to ' Eliminar', bank_transaction_path(transaction), method: :delete, data: { confirm: '¿Estas seguro?' }
+        = get_name_customer(transaction.target_account)
         
-= link_to "Hacer una transaccion", new_bank_transaction_path
+= link_to "Hacer una transferencia", new_bank_transaction_path

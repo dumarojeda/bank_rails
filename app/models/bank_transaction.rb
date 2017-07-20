@@ -1,4 +1,4 @@
 class BankTransaction < ApplicationRecord
   # Validations
-  validates :amount, :movement, :source, presence: true
+  validates :origin_account, :target_account, :amount, presence: true
 end
