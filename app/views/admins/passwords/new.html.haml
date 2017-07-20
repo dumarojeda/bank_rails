@@ -1,13 +1,11 @@
 .row
-  .col-sm-4.col-sm-offset-4
+  .col-sm-4.col-sm-offset-4.form-section
     %h2 ¿Olvidaste tu contraseña?
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = devise_error_messages!
       %p Escribe tu correo para enviarte las instrucciones de restablecimiento de contraseña
       .form-group
-        = f.label "Email"
-        %br/
-        = f.email_field :email, class: 'form-control', autofocus: true
-      .actions
-        = f.submit "Enviar"
+        = f.email_field :email, placeholder: 'Email', class: 'form-control', autofocus: true
+      .form-group
+        = f.submit "Enviar", class: 'btn btn-custom'
     = render "admins/shared/links"
