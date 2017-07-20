@@ -51,7 +51,7 @@ Esta sección tiene las transacciones bancarias del banco, la aplicacion solo pe
 
 ## Diseño de base de datos
 Para desarrollar el software me base en el siguiente diseño de base de datos, para realizarlo me guie por las historias de usuario.
-[image:https://raw.githubusercontent.com/dumarojeda/bank_rails/master/public/diseno_db.png]
+[Design DB](./public/diseno_db.png?raw=true "Design BD")
 
 
 ## Como instalar en local
