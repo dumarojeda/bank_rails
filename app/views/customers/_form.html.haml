@@ -1,8 +1,3 @@
-- if @errors
-  .alert.alert-danger{:role => "alert"}
-    %ul
-      - @errors.each do |error|
-        %li= error
 = form_for(customer) do |f|
   .form-group
     = f.label "Nombre"

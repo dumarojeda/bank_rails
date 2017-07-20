@@ -1,11 +1,6 @@
 .row
   .col-sm-6.col-sm-offset-3
     %h1 Nueva transferencia
-    - if @errors
-      .alert.alert-danger{:role => "alert"}
-        %ul
-          - @errors.each do |error|
-            %li= error
     =form_for :bank_transaction, url: bank_transactions_path do |f|
       .form-group
         = f.label "Cuenta Origen"

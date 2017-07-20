@@ -16,5 +16,10 @@
         - if alert
           %p.alert.alert-danger 
             = alert
+        - if @errors
+          %p.alert.alert-danger
+            %ul
+              - @errors.each do |error|
+                %li= error
         = yield
     = render 'layouts/footer'
