@@ -1,24 +1,10 @@
-# README
+# Bank Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bank Rails es un app realizada en Ruby on Rails.
 
-Things you may want to cover:
+## Credenciales
 
-* Ruby version
+Para acceder y revisar el app puedes entrar en [heroku](https://young-eyrie-26989.herokuapp.com/)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Email: admin@example.com
+Contraseña: 123456
