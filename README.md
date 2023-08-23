@@ -4,8 +4,6 @@ Bank Rails es un app realizada en Ruby on Rails. Esta app permite gestionar a un
 
 ## Credenciales
 
-Para acceder y revisar el app puedes entrar en [heroku](https://young-eyrie-26989.herokuapp.com/)
-
   * Email: admin@example.com
   * Contraseña: 1q2w3e4r5t6y
 
